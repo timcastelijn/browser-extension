@@ -7,6 +7,7 @@
 clockifyButton.render('.js-right-pane .tb-element-big:not(.clockify)', {observe: true}, (elem) => {
     var link,
         container = $('.tb-element-title', elem),
+        workspaceElem = $('.tb-element-subtitle a:nth-child(1)', elem),
         tasklistElem = $('.tb-element-subtitle a:nth-child(3)', elem),
         titleElem = $('.js-element-title-inner a', container);
 
