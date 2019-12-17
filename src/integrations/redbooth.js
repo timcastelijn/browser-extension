@@ -7,10 +7,15 @@
 clockifyButton.render('.js-right-pane .tb-element-big:not(.clockify)', {observe: true}, (elem) => {
     var link,
         container = $('.tb-element-title', elem),
-        projectElem = $('.tb-element-subtitle a', elem),
+        tasklistElem = $('.tb-element-subtitle a:nth-child(3)', elem),
         titleElem = $('.js-element-title-inner a', container);
 
-        link = clockifyButton.createButton(titleElem.textContent);
+        if (tasklistElem.textContent) {
+          console.log( 'tasklistElem text', tasklistElem.textContent );
+        }
+
+
+        link = clockifyButton.createButton(titleElem.textContent, tasklistElem.textContent );
 
         container.appendChild(link);
 });
@@ -20,10 +25,15 @@ clockifyButton.render('.js-right-pane .tb-element-big:not(.clockify)', {observe:
 clockifyButton.render('.js-modal-dialog-content:not(.clockify)', {observe: true}, (elem) => {
     var link,
         container = $('.tb-element-title', elem),
-        projectElem = $('.tb-element-subtitle a', elem),
+        workspaceElem = $('.tb-element-subtitle a:nth-child(1)', elem),
+        tasklistElem = $('.tb-element-subtitle a:nth-child(3)', elem),
         titleElem = $('.js-element-title-inner a', container);
 
-        link = clockifyButton.createButton(titleElem.textContent);
+        if (tasklistElem.textContent) {
+          console.log( 'tasklistElem text', tasklistElem.textContent );
+        }
+
+        link = clockifyButton.createButton(titleElem.textContent, tasklistElem.textContent );
 
         container.appendChild(link);
 });
